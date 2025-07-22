@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen>
                     angle: _animationcontroller.value * 2.0 * math.pi,
                     child: child);
               },
-              child: Container(
+              child: SizedBox(
                 height: 200,
                 width: 200,
                 child: Center(

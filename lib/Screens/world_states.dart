@@ -56,6 +56,7 @@ class _WorldStatesState extends State<WorldStates>
                   child: FutureBuilder<WorldData>(
                     future: _worldDataFuture, // Yahan state variable use kiya
                     builder: (context, snapshot) {
+                      // agr connection waiting mein hai to vo spinkit dikhayega.
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return Center(
                           child: SpinKitFadingCircle(
