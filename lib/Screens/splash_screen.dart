@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:covid_tracker_app/Screens/world_states.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,6 +19,16 @@ class _SplashScreenState extends State<SplashScreen>
         this, //The vsync parameter is used to improve performance by pausing animations when they're not visible.
     //  It expects a class that implements TickerProvider, which SingleTickerProviderStateMixin provides.
   )..repeat();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(
+        Duration(seconds: 5),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => WorldStates())));
+  }
 
   @override
   Widget build(BuildContext context) {
