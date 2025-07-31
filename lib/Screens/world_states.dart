@@ -20,7 +20,7 @@ class _WorldStatesState extends State<WorldStates>
     vsync: this,
   )..repeat();
 
-  // FIX 1: API call ke future ko state variable mein store kiya
+  
   late Future<WorldData> _worldDataFuture;
 
   final colorList = <Color>[
@@ -70,7 +70,7 @@ class _WorldStatesState extends State<WorldStates>
                         return const Center(
                             child: Text("Something went wrong"));
                       }
-                      // Data aane ke baad UI dikhane ke liye alag method call kiya
+                      
                       return _buildDataView(snapshot.data!);
                     },
                   ),
@@ -83,7 +83,7 @@ class _WorldStatesState extends State<WorldStates>
     );
   }
 
-  // FIX 2: UI ko alag method mein rakha taaki build method saaf rahe
+  
   Widget _buildDataView(WorldData data) {
     return ListView(
       children: [
@@ -107,7 +107,7 @@ class _WorldStatesState extends State<WorldStates>
             showLegends: true,
             legendTextStyle: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.white, // <-- Add this line
+              color: Colors.white, 
             ),
           ),
           chartValuesOptions: const ChartValuesOptions(
@@ -170,7 +170,7 @@ class _WorldStatesState extends State<WorldStates>
   }
 }
 
-// ReusableRow (No changes needed, yeh pehle se hi aacha hai)
+
 class ReusableRow extends StatelessWidget {
   final String title;
   final String value;
